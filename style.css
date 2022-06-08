@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #00d5ff;
+    background: url(./imgs/sea.jpg);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: flex-end;
+}
+
+.pontonContainer {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.ponton {
+    background-color: #553311;
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    column-gap: 20%;
+}
+
+.dockContainer {
+    width: 40%;
+    height: 15%;
+}
+.emplacement {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 2;
+    position: relative;
+    text-align: center;
+}
+.emplacement:hover{
+    background-color: green;
+    color: #fff;
+}
+.loue {
+    background-color: black;
+}
+.loue:hover {
+    background-color: red;
+}
+.loue > p {
+    color: #fff;
+    text-align: center;
+}
+.formOverlay {
+    visibility: hidden;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+}
+.dockForm {
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translate(-50%, -50%);
+    width: 30vw;
+    height: 20vh;
+    font-family: 'Fira Sans', sans-serif;
+    visibility: hidden;
+}
+.dockForm > fieldset {
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.dockForm > fieldset > legend {
+    background-color: #fff;
+    border: 1px solid black;
+    padding: 3px 6px;
+    width: 70%;
+    /* font-size: 1.5rem; */
+}
+.dockForm > fieldset > select, .dockForm > fieldset > input {
+    margin: .4rem;
+    /* font-size: 1.5rem; */
+}
+
+.dockForm > fieldset > .hiddenInput {
+    visibility: hidden;
+    position: absolute;
+}
+
+.bateauForm {
+    position: absolute;
+    top: 2vh;
+    left: 2vw;
+}
+.bateauForm > label {
+    display: block;
+}
+
+@media screen and (max-width: 768px) {
+    .pontonContainer{
+        overflow-y: scroll;
+        width: unset;
+        column-gap: 5vw;
+        padding: 0 5vw;
+        justify-content: unset;
+    }
+    .ponton{
+        min-width: 40vw;
+    }
+.dockForm {
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translate(-50%, -50%);
+    width: fit-content;
+    height: fit-content;
+    font-family: 'Fira Sans', sans-serif;
+    visibility: hidden;
+}
+}
